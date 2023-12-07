@@ -1,0 +1,45 @@
+.loadingContainer   {
+    @apply grid place-content-center;
+}
+.container {
+    @apply flex items-center flex-col gap-[1.8rem] justify-center mt-[1rem];
+}
+.title {
+    @apply text-[#bbb];
+}
+.subtitle {
+    @apply text-[1.6rem] text-[#bbb] mb-[2.8rem];
+}
+.form {
+    @apply w-[30rem] flex flex-col gap-[2rem] mt-[5rem];
+}
+.input {
+    @apply bg-transparent outline-none text-[#bbb] text-[1.6rem] font-[bold] p-[2rem] rounded-[0.5rem] border-[0.2rem]
+    border-solid border-[#bbb];
+
+}
+.button {
+    @apply w-[30rem] text-[1.6rem] cursor-pointer bg-[#53c28b] text-[#eee] font-[bold] p-[2rem] rounded-[0.5rem]
+    border-[none] hover:bg-[#49b07d];
+}
+.or {
+    @apply text-[#bbb];
+}
+.link {
+    @apply underline text-[#7d7c7c] hover:text-[rgb(61,61,61)];
+}
+.google {
+    @apply bg-[rgba(228,97,50,0.72)] hover:bg-[rgba(228,97,50,0.803)];
+}
+.loginGoogle    {
+    @apply text-[1.4rem];
+}
+.register    {
+    @apply text-[1.4rem] mb-[5rem];
+}
+.loginGoogle:hover {
+    @apply text-blue-600;
+}
+.register:hover {
+    @apply text-blue-600;
+}

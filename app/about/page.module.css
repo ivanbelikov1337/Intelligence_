@@ -1,0 +1,22 @@
+
+.imgContainer {
+    @apply w-full h-[23rem] relative;
+}
+.img {
+    @apply object-cover grayscale;
+}
+.imgText {
+    @apply absolute bg-[#53c28b] text-[white] p-[0.5rem] left-[2rem] bottom-[2rem];
+}
+.textContainer {
+    @apply flex gap-[1.4rem];
+}
+.item {
+    @apply flex-1 flex flex-col gap-[1.4rem] mt-[2rem];
+}
+.title  {
+    @apply text-[1.6rem]
+}
+.desc {
+    @apply text-[1.4rem] font-light text-justify;
+}

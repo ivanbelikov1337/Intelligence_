@@ -1,0 +1,38 @@
+.container {
+    @apply flex items-center gap-[10rem] text-center ;
+}
+
+.item {
+    @apply flex-1 flex  flex-col gap-[8rem];
+}
+.itemImg {
+    @apply flex-1 flex flex-col gap-[5rem];
+}
+.title {
+    @apply text-5xl  bg-[linear-gradient(to_bottom,#020024,#fff)];
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.button  {
+    @apply w-[30rem];
+}
+.desc   {
+    @apply text-2xl
+}
+.img {
+    @apply w-[100%] h-[50rem] object-contain;
+}
+
+
+@media (max-width: 500px) {
+    .container  {
+        @apply grid  h-full ;
+    }
+    .img {
+        @apply w-[100%] h-[20rem] object-contain;
+    }
+    .itemImg    {
+        @apply order-[-1]
+    }
+
+}

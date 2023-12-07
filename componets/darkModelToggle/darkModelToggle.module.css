@@ -1,0 +1,10 @@
+.container {
+    @apply w-[4.2rem] h-[2.4rem] flex items-center justify-between relative cursor-pointer p-[0.2rem] rounded-[3rem]
+    border-[0.15rem] border-solid border-[#53c28b70];
+}
+.icon {
+    @apply text-[1.1rem];
+}
+.ball {
+    @apply w-[1.7rem] h-[1.7rem] bg-[#53c28b] absolute rounded-[50%];
+}

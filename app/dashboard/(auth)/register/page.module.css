@@ -1,0 +1,25 @@
+.container {
+    @apply flex flex-col gap-[2rem] items-center justify-center;
+}
+.title  {
+    @apply text-[1.5rem]
+}
+.form {
+    @apply w-[30rem] flex flex-col gap-[2rem];
+}
+.input {
+    @apply bg-transparent text-[#bbb] text-[1.6rem] font-[bold] h-[6rem] p-[2rem] rounded-[0.5rem] border-[0.2rem]
+    border-solid border-[#bbb];
+}
+.or {
+    @apply text-[1.4rem]
+}
+.link   {
+    @apply text-[1.4rem]
+}
+.link:hover {
+    @apply text-blue-600
+}
+.button {
+    @apply w-[30rem] cursor-pointer bg-[#53c28b] text-[#eee] text-[1.6rem] font-[bold] p-[2rem] rounded-[0.5rem] border-[none];
+}

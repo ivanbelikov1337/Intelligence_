@@ -1,0 +1,6 @@
+.container {
+    @apply cursor-pointer bg-[#53c28b] w-full text-[white] p-[2rem] rounded-[0.5rem] border-[none] text-[1.4rem];
+}
+.container:hover {
+    @apply cursor-pointer bg-[#296145] ;
+}

@@ -1,0 +1,44 @@
+.container  {
+
+}
+.catTitle {
+    @apply text-["silver"] text-center text-[1.8rem] pt-[1rem]  capitalize;
+}
+.item {
+    @apply flex gap-[5rem] text-center mt-[3rem] mb-[10rem];
+}
+.item:nth-child(2n + 1) {
+    @apply flex-row-reverse;
+}
+.imgContainer {
+    @apply flex-1 h-[42rem] relative;
+}
+.img {
+    @apply object-cover ;
+}
+.content {
+    @apply flex-1 flex flex-col gap-[2rem] justify-center;
+}
+.title {
+    @apply text-[3rem];
+}
+.desc {
+    @apply text-xl;
+}
+@media (max-width: 1024px) {
+    .imgContainer {
+        @apply flex-1 h-[35rem] relative;
+    }
+}
+
+@media (max-width: 500px) {
+    .item   {
+        @apply grid mb-[8rem]
+    }
+    .content    {
+        @apply order-1
+    }
+    .imgContainer {
+        @apply flex-1 h-[35rem] relative;
+    }
+}

@@ -1,0 +1,45 @@
+.container {
+    @apply relative
+}
+
+.logout,
+.setting,
+.account {
+    @apply p-[0.4rem]  text-white cursor-pointer rounded-sm border-none grid grid-cols-2 gap-[4rem] pl-[0.8rem]  text-start;
+}
+.logout:hover,
+.setting:hover,
+.account:hover  {
+    @apply cursor-pointer text-blue-600;
+}
+.blockModule {
+    @apply translate-x-[150%] animate-[ani_1s_forwards] bg-neutral-700 grid place-content-center
+    grid-rows-[1fr,1fr,1fr] text-[1.4rem] w-[10rem] h-[11rem] absolute left-[-5.5rem] pt-[1.4rem] z-[1];
+}
+.closeModal {
+    @apply absolute top-[-0.4rem] left-[-0.6rem]  bg-neutral-700 rounded-full text-white
+    flex justify-center;
+}
+.closeModal:hover   {
+    @apply cursor-pointer;
+}
+
+@keyframes ani {
+    0% {opacity: 0}
+    50% {opacity: 0.5}
+    100% {opacity: 1}
+    0% {transform: translateX(150%);}
+    100% {transform: translateY(0);}
+}
+.avatar {
+    @apply rounded-full w-[4.5rem] h-[4.5rem];
+}
+.avatar:hover {
+    @apply cursor-pointer;
+}
+
+@media (max-width: 500px) {
+    .blockModule    {
+        @apply w-[11rem] h-[31.2rem] pt-[5rem] fixed grid-rows-[5rem,5rem,5rem] place-content-start  left-[76%] top-0;
+    }
+}

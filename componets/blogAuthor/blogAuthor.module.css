@@ -1,0 +1,21 @@
+
+.avatar {
+    @apply rounded-full h-[50px];
+}
+.author {
+    @apply flex justify-between
+}
+
+
+.authorLike {
+    @apply flex  gap-2 pt-[3rem] align-baseline;
+}
+.heart  {
+    @apply pt-1
+}
+.likeCounter    {
+    @apply text-[18px]
+}
+.heart:hover  {
+    @apply cursor-pointer;
+}

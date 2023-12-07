@@ -1,0 +1,36 @@
+.top {
+    @apply flex;
+}
+.info {
+    @apply flex-1 flex flex-col gap-[5rem] pt-[5rem];
+}
+.title {
+    @apply text-[3rem] flex justify-center;
+}
+.desc {
+    @apply text-[1.8rem] font-light text-center pr-[0.8rem];
+}
+.imageContainer {
+    @apply flex-1 h-[30rem] relative;
+}
+.image {
+    @apply object-cover;
+}
+.content {
+    @apply text-xl font-light text-[#999] text-justify mt-[5rem] mb-[2rem];
+}
+.container  {
+    @apply min-h-[36rem] pt-[2rem]
+}
+.text   {
+    @apply text-[1.6rem]
+}
+
+@media (max-width: 500px) {
+    .top    {
+        @apply grid
+    }
+    .info {
+        @apply flex-1 flex flex-col gap-[3rem] pt-[1rem];
+    }
+}

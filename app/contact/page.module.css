@@ -1,0 +1,55 @@
+
+.title {
+    @apply text-[2rem] text-center mb-[4rem] mt-[1rem];
+}
+
+.content {
+    @apply flex items-center gap-[10rem];
+}
+
+.imgContainer {
+    @apply flex-1 h-[40rem] relative;
+}
+
+.image {
+    @apply object-contain ;
+}
+
+.form {
+    @apply flex-1 flex flex-col gap-[2rem];
+}
+
+.input,
+.textArea {
+    @apply bg-transparent outline-none text-[#bbb] text-[2rem] font-[bold] p-[1rem] border-[none] border-[0.2rem]
+    border-solid border-[#bbb];
+}
+
+@media (max-width: 1024px) {
+    .title {
+        @apply text-[1.6rem] mb-[1rem]  ;
+    }
+    .input,
+    .textArea {
+        @apply text-[1.6rem] border-[0.2rem];
+    }
+}
+
+@media (max-width: 500px) {
+    .content {
+        @apply grid gap-0;
+    }
+    .input,
+    .textArea {
+        @apply text-[1.6rem] border-[0.2rem];
+    }
+    .imgContainer   {
+        @apply h-[31rem]
+    }
+    .form {
+        @apply flex ;
+    }
+    .button {
+        @apply w-full;
+    }
+}

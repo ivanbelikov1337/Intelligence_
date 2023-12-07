@@ -1,0 +1,51 @@
+.container  {
+    @apply h-full min-h-[50rem];
+}
+.mainTitle {
+    @apply text-[10rem];
+}
+.selectTitle {
+    @apply mx-0 my-[2rem] text-center text-3xl;
+}
+.items {
+    @apply flex gap-[5rem] justify-center ;
+}
+.item {
+    @apply w-[27rem] h-[40rem] relative bg-cover rounded-[0.5rem] border-[0.5rem] border-solid border-[#bbb];
+}
+.item:nth-child(1) {
+    background: url("../../public/illustration.png") ;
+    background-size: cover;
+}
+.item:nth-child(2) {
+    background: url("../../public/websites.jpg") ;
+    background-size: cover;
+}
+.item:nth-child(3) {
+    background: url("../../public/apps.jpg") ;
+    background-size: cover;
+}
+.title {
+    @apply absolute text-[3rem] font-[bold] right-[1rem] bottom-[1rem];
+}
+.item:hover .title {
+    @apply text-[#53c28b];
+}
+
+@media (max-width: 1024px) {
+    .item {
+        @apply w-[22rem] h-[32rem] text-[2rem];
+    }
+    .selectTitle {
+        @apply text-[1.6rem];
+    }
+}
+
+@media (max-width: 500px) {
+    .items {
+        @apply flex-col;
+    }
+    .item {
+        @apply w-full h-[17rem] text-[2rem];
+    }
+}
