@@ -1,8 +1,9 @@
+"use client"
 import styles from "./page.module.css"
 import Link from "next/link";
 import Image from "next/image"
-import {FaRegHeart} from "react-icons/fa6";
 import {getBlog} from "@/utils/apiUtils";
+import useSWR from "swr";
 
 
 export interface IBlog {
@@ -16,9 +17,11 @@ export interface IBlog {
     username: string
 }
 
-const Blog = async () => {
+const Blog =  () => {
+    const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
 
-    const data = await getBlog()
+    // Here we are taking data from api and using useSWR this is React Hooks for Data Fetching
+    const {data} = useSWR<IBlog[]>(`http://localhost:3000/api/posts`, fetcher)
 
     if (data) {
         return (
