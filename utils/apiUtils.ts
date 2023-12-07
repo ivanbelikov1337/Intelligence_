@@ -13,7 +13,7 @@ export async function getBlog(): Promise<IBlog[]> {
 
 export const getData = async (id: string): Promise<IBlog> => {
 
-    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {cache: "no-cache"},)
+    const res = await fetch(`http://localhost:3000/api/posts/${id}`)
     if (!res.ok) {
         throw new Error('Failed to fetch data')
     }
