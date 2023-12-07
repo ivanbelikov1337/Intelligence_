@@ -2,7 +2,7 @@ import {IBlog} from "@/app/blog/page";
 
 export async function getBlog(): Promise<IBlog[]> {
     try {
-        const res = await fetch('http://localhost:3000/api/posts', {cache: 'force-cache', next: {revalidate: 86400}})
+        const res = await fetch('http://localhost:3000/api/posts', {cache: 'force-cache'})
         return await res.json()
 
     } catch (e: any) {
