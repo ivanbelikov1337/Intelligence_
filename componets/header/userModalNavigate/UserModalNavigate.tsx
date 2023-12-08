@@ -8,7 +8,7 @@ import {IoSettingsOutline} from "react-icons/io5";
 import Link from "next/link";
 import {MdLogout} from "react-icons/md";
 import {PiUserList} from "react-icons/pi";
-import Avatar from "../../public/avatar.png"
+import Avatar from "../../../public/avatar.png"
 import {VscChromeClose} from "react-icons/vsc";
 
 interface IData {

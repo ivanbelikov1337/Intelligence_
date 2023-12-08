@@ -19,7 +19,7 @@ interface IBlogData {
     desc: string
 }
 
-const BlogAuthor: FC<IBlogAuthor> = ({id}) => {
+const BlogAuthorId: FC<IBlogAuthor> = ({id}) => {
     const [disableLike, setDisableLike] = useState(true)
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
 
@@ -65,7 +65,6 @@ const BlogAuthor: FC<IBlogAuthor> = ({id}) => {
     }
     return (
         <div className={styles.author}>
-
             <div className={styles.authorInfo}>
                 <Image
                     className={styles.avatar}
@@ -89,4 +88,4 @@ const BlogAuthor: FC<IBlogAuthor> = ({id}) => {
     )
 }
 
-export default BlogAuthor;
+export default BlogAuthorId;

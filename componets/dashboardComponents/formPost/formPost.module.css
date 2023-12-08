@@ -1,0 +1,13 @@
+.new {
+    @apply flex-1 flex flex-col gap-[2rem];
+}
+.postTitle   {
+    @apply text-[1.6rem] text-center;
+}
+.input,
+.textArea {
+    @apply bg-transparent text-[#bbb] text-[1.6rem] font-[bold] p-[1rem] rounded-[0.3rem] border-[0.2rem] border-solid border-[#bbb];
+}
+.button {
+    @apply cursor-pointer bg-[#53c28b] text-[#eee] font-[bold] p-[1.5rem] text-[1.6rem] rounded-[0.5rem] border-[none];
+}

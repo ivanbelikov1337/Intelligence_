@@ -1,0 +1,14 @@
+.author {
+    @apply grid place-content-center text-center;
+}
+
+.avatar {
+    @apply rounded-full w-[5rem] h-[5rem];
+}
+
+@media (max-width: 500px) {
+    .author {
+        @apply flex justify-center;
+    }
+
+}

@@ -1,8 +1,9 @@
 import {IBlog} from "@/app/blog/page";
 
-export async function getBlog(): Promise<IBlog[]> {
+export async function getAllBlogPosts(): Promise<IBlog[]> {
     try {
-        const res = await fetch('http://localhost:3000/api/posts')
+        const res = await fetch('http://localhost:3000/api/posts',
+            {cache: "force-cache", next: {revalidate: 20000}})
         return await res.json()
 
     } catch (e: any) {
@@ -11,11 +12,12 @@ export async function getBlog(): Promise<IBlog[]> {
     }
 }
 
-export const getData = async (id: string): Promise<IBlog> => {
-
-    const res = await fetch(`http://localhost:3000/api/posts/${id}`)
-    if (!res.ok) {
-        throw new Error('Failed to fetch data')
+export const getSinglePost = async (id: string): Promise<IBlog> => {
+    try {
+        const res = await fetch(`http://localhost:3000/api/posts/${id}`, {cache: "no-cache"})
+        return await res.json()
+    } catch (error: any) {
+        throw new Error("Failed to fetch data")
     }
-    return await res.json()
+
 }

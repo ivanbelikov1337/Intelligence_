@@ -1,14 +1,14 @@
 "use client"
 import Link from "next/link";
 import styles from "./header.module.css"
-import DarkModeToggle from "@/componets/darkModelToggle/DarkModeToggle";
-import UserModalNavigate from "@/componets/userModalNavigate/UserModalNavigate";
+import DarkModeToggle from "@/componets/header/darkModelToggle/DarkModeToggle";
+import UserModalNavigate from "@/componets/header/userModalNavigate/UserModalNavigate";
 import {useSession} from "next-auth/react";
 import {usePathname} from "next/navigation";
 import {Triangle} from "react-loader-spinner";
-import LinkNavigate from "@/componets/linkNavigate/LinkNavigate";
+import LinkNavigate from "@/componets/header/linkNavigate/LinkNavigate";
 import {useState} from "react";
-import MenuBurger from "@/componets/menuBurger/menuBurger";
+import MenuBurger from "@/componets/header/menuBurger/menuBurger";
 
 
 const links = [

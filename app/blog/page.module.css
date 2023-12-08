@@ -8,9 +8,7 @@
 .container:hover    {
     @apply bg-stone-300;
 }
-.image {
-    @apply object-cover w-[35rem] h-[30rem];
-}
+
 .content    {
     @apply grid gap-[1.4rem] max-w-[14rem] min-w-[10rem];
 }
@@ -22,22 +20,12 @@
 .desc {
     @apply text-[1.4rem] text-[#999];
 }
-.author {
-    @apply grid place-content-center text-center;
-}
 
-
-.authorLike {
-    @apply flex  gap-2 pt-[2rem] align-baseline h-[4rem];
-}
 .heart  {
     @apply pt-[0.4rem]
 }
 .likeCounter    {
     @apply text-[1.8rem]
-}
-.avatar {
-    @apply rounded-full w-[5rem] h-[5rem];
 }
 
 @media (max-width: 500px) {
@@ -45,16 +33,7 @@
         @apply grid items-center text-center bg-stone-300;
     }
 
-    .image {
-        @apply object-cover w-full h-[15rem];
-    }
-
     .content    {
         @apply grid gap-[1.4rem] max-w-full order-[-1] pt-[1rem];
     }
-
-    .author {
-        @apply flex justify-center;
-    }
-
 }

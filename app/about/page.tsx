@@ -1,4 +1,3 @@
-"use client"
 import Button from "@/componets/button/Button";
 import People from "../../public/people.jpg"
 import styles from "./page.module.css"
@@ -6,7 +5,6 @@ import Image from "next/image"
 
 
 const About =   () => {
-
     return (
         <main className={styles.container}>
             <section className={styles.imgContainer}>

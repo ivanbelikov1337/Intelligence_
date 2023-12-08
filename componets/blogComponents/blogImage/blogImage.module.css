@@ -1,0 +1,12 @@
+.image {
+    @apply object-cover w-[35rem] h-[30rem];
+}
+
+
+
+
+@media (max-width: 500px) {
+    .image {
+        @apply object-cover w-full h-[15rem];
+    }
+}

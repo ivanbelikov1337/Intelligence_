@@ -1,0 +1,35 @@
+.post {
+    @apply flex items-center gap-[3rem]  h-[13rem] justify-between mx-0 my-[2rem];
+}
+.imgContainer {
+    @apply static w-[20rem] h-[10rem];
+}
+.img {
+    @apply object-cover h-[13rem] w-[20rem];
+}
+.postItem   {
+    @apply grid gap-[1rem];
+}
+.postTitle   {
+    @apply text-[1.6rem] text-center;
+}
+.postContent    {
+    @apply h-[8rem] text-[1.4rem] overflow-hidden w-[30rem];
+}
+.delete {
+    @apply cursor-pointer text-[red];
+}
+@media (max-width: 500px)  {
+    .post   {
+        @apply grid h-[42rem] justify-start align-middle;
+    }
+    .delete {
+        @apply grid place-content-center;
+    }
+    .imgContainer   {
+        @apply w-full h-[15rem]
+    }
+    .img    {
+        @apply w-full h-[14rem]
+    }
+}
