@@ -27,7 +27,6 @@ interface IBlogData {
 const Page: FC<IBlogAuthor> = ({params}) => {
     const [disableLike, setDisableLike] = useState(true)
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
-
     // Here we are taking data from api and using useSWR this is React Hooks for Data Fetching
     const {data, mutate, isLoading} = useSWR<IBlogData>(`http://localhost:3000/api/posts/${params.id}`, fetcher)
 
