@@ -3,8 +3,6 @@
 }
 
 
-
-
 @media (max-width: 500px) {
     .image {
         @apply object-cover w-full h-[15rem];

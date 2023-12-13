@@ -1,7 +1,6 @@
 import {FC} from "react";
-import  styles from "./blogItems.module.css"
+import  styles from "./blogImage.module.css"
 import Image from "next/image";
-import Link from "next/link";
 import {IBlog} from "@/app/blog/page";
 
 interface IProps {
