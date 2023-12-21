@@ -22,11 +22,13 @@ interface IProps {
 }
 
 const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) => {
-
+    const [avatar, setAvatar] = useState("")
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
     const {data, isLoading} = useSWR<IData>(`/api/users/${email}`, fetcher)
 
-
+    useEffect(() => {
+        setAvatar(data?.avatar!)
+    }, [data?.avatar]);
 
     if  (isLoading) {
         return (
