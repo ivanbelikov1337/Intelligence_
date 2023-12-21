@@ -9,6 +9,7 @@ import Link from "next/link";
 import {MdLogout} from "react-icons/md";
 import {PiUserList} from "react-icons/pi";
 import {VscChromeClose} from "react-icons/vsc";
+import {Triangle} from "react-loader-spinner";
 
 interface IData {
     avatar: string
@@ -24,19 +25,26 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
 
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
     const {data, isLoading} = useSWR<IData>(`/api/users/${email}`, fetcher)
-    const [urlImage, setUrlImage] = useState("")
 
-    useEffect(() => {
-        data?.avatar && setUrlImage(data?.avatar!)
-    }, [data?.avatar]);
+
+    if  (isLoading) {
+        return (
+            <Triangle
+                height="4.5rem"
+                width="4.5rem"
+                color="#6A5E96"
+                ariaLabel="triangle-loading"
+                visible={true}
+            />
+        )
+    }
+
     return (
         <div className={styles.container}>
-            {urlImage &&
-                <Image onClick={() => setSwitcherModal((prev:boolean) => !prev)}
-                       src={urlImage} alt="avatar" width={50}
-                       className={styles.avatar}
-                       height={50}/>
-            }
+            <Image onClick={() => setSwitcherModal((prev:boolean) => !prev)}
+                   src={data?.avatar!} alt="avatar" width={50}
+                   className={styles.avatar}
+                   height={50}/>
             {switcherModal &&
                 <div className={styles.blockModule}>
                     <div onClick={() => setSwitcherModal((prev:boolean) => !prev)} className={styles.closeModal}>
