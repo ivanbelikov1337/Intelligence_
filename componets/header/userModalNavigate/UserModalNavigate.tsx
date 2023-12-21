@@ -39,6 +39,7 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
             />
         )
     }
+    console.log(data?.avatar)
     console.log(email)
     return (
         <div className={styles.container}>
