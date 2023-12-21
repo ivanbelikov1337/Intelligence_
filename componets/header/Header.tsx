@@ -52,7 +52,7 @@ const Header = () => {
     const [switcherModal, setSwitcherModal] = useState(false)
     const currentRoute = usePathname();
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
-    const {data:dataUser, isLoading} = useSWR<IData>(`/api/users/${data?.user?.email}`, fetcher)
+    const {data:dataUser, isLoading} = useSWR<IData>(`/api/users/ishak@mail.ua`, fetcher)
 
 
     return (
