@@ -9,6 +9,7 @@ import {Triangle} from "react-loader-spinner";
 import LinkNavigate from "@/componets/header/linkNavigate/LinkNavigate";
 import {useState} from "react";
 import MenuBurger from "@/componets/header/menuBurger/menuBurger";
+import useSWR from "swr";
 
 
 const links = [
@@ -51,6 +52,8 @@ const Header = () => {
     const [switcherModal, setSwitcherModal] = useState(false)
     const currentRoute = usePathname();
 
+    const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
+    const {data:avatar, isLoading} = useSWR<string>(`/api/users/${data?.user?.email}`, fetcher)
     return (
         <header className={styles.container}>
             <Link href="/" className={styles.logo}>Intelligence</Link>
@@ -78,7 +81,8 @@ const Header = () => {
                 {status === "authenticated" &&
                     <UserModalNavigate setSwitcherModal={setSwitcherModal}
                                        switcherModal={switcherModal}
-                                       email={data?.user?.email!}/>
+                                       avatar={avatar!}
+                    />
                 }
             </section>
         </header>
