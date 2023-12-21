@@ -8,7 +8,6 @@ import {IoSettingsOutline} from "react-icons/io5";
 import Link from "next/link";
 import {MdLogout} from "react-icons/md";
 import {PiUserList} from "react-icons/pi";
-import Avatar from "../../../public/avatar.png"
 import {VscChromeClose} from "react-icons/vsc";
 
 interface IData {
@@ -26,8 +25,9 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
     const {data, isLoading} = useSWR<IData>(`/api/users/${email}`, fetcher)
     const [urlImage, setUrlImage] = useState("")
+
     useEffect(() => {
-        !data?.avatar ? setUrlImage(Avatar as any) : setUrlImage(data.avatar)
+        data?.avatar && setUrlImage(data?.avatar!)
     }, [data?.avatar]);
     return (
         <div className={styles.container}>
