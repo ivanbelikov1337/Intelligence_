@@ -25,7 +25,7 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
 
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
     const {data, isLoading} = useSWR<IData>(`/api/users/${email}`, fetcher)
-    const [urlImage, setUrlImage] = useState("")
+
 
 
     if  (isLoading) {
@@ -42,12 +42,10 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
     console.log(email)
     return (
         <div className={styles.container}>
-            {urlImage &&
-                <Image onClick={() => setSwitcherModal((prev:boolean) => !prev)}
-                       src={urlImage} alt="avatar" width={50}
-                       className={styles.avatar}
-                       height={50}/>
-            }
+            <Image onClick={() => setSwitcherModal((prev:boolean) => !prev)}
+                   src={data?.avatar!} alt="avatar" width={50}
+                   className={styles.avatar}
+                   height={50}/>
             {switcherModal &&
                 <div className={styles.blockModule}>
                     <div onClick={() => setSwitcherModal((prev:boolean) => !prev)} className={styles.closeModal}>
