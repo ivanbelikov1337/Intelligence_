@@ -19,7 +19,7 @@ export interface IBlog {
 const Blog =  () => {
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
     // Here we are taking data from api and using useSWR this is React Hooks for Data Fetching
-    const {data, mutate, isLoading} = useSWR<IBlog[]>(`http://localhost:3000/api/posts`, fetcher)
+    const {data, mutate, isLoading} = useSWR<IBlog[]>(`/api/posts`, fetcher)
 
 
     if (data) {

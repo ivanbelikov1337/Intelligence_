@@ -24,7 +24,7 @@ interface IProps {
 const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) => {
 
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
-    const {data, isLoading} = useSWR<IData>(`http://localhost:3000/api/users/${email}`, fetcher)
+    const {data, isLoading} = useSWR<IData>(`/api/users/${email}`, fetcher)
     const [urlImage, setUrlImage] = useState("")
     useEffect(() => {
         !data?.avatar ? setUrlImage(Avatar as any) : setUrlImage(data.avatar)
@@ -42,7 +42,7 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
                     <div onClick={() => setSwitcherModal((prev:boolean) => !prev)} className={styles.closeModal}>
                         <VscChromeClose size={"2rem"}/>
                     </div>
-                    <button onClick={() => signOut({callbackUrl: 'http://localhost:3000'})}
+                    <button onClick={() => signOut({callbackUrl: '/'})}
                             className={styles.logout}>
                         <span>Logout</span>
                         <MdLogout size={"2rem"}/>

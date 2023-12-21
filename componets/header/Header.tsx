@@ -74,7 +74,7 @@ const Header = () => {
                     />
                 }
                 {status === "unauthenticated" &&
-                    <Link className={styles.login} href={"http://localhost:3000/dashboard/login"}>Login</Link>}
+                    <Link className={styles.login} href={"/dashboard/login"}>Login</Link>}
                 {status === "authenticated" &&
                     <UserModalNavigate setSwitcherModal={setSwitcherModal}
                                        switcherModal={switcherModal}
