@@ -52,8 +52,9 @@ const Header = () => {
     const [switcherModal, setSwitcherModal] = useState(false)
     const currentRoute = usePathname();
     const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
-    const {data:dataUser, isLoading} = useSWR<IData>(`/api/users/ishak@mail.ua`, fetcher)
+    const {data:dataUser, isLoading} = useSWR<IData>(`https://intelligence-68wu5vrxq-ivans-projects-ebfc0939.vercel.app/api/users/ishak@mail.ua`, fetcher)
 
+    console.log(dataUser?.avatar!)
 
     return (
         <header className={styles.container}>
