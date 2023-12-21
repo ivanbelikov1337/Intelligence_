@@ -27,7 +27,7 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
     const {data, isLoading} = useSWR<IData>(`/api/users/${email}`, fetcher)
 
 
-    if  (isLoading) {
+    if  (!data) {
         return (
             <Triangle
                 height="4.5rem"
@@ -42,7 +42,7 @@ const UserModalNavigate: FC<IProps> = ({email,switcherModal,setSwitcherModal}) =
     return (
         <div className={styles.container}>
             <Image onClick={() => setSwitcherModal((prev:boolean) => !prev)}
-                   src={data?.avatar!} alt="avatar" width={50}
+                   src={data.avatar} alt="avatar" width={50}
                    className={styles.avatar}
                    height={50}/>
             {switcherModal &&
