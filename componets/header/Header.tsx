@@ -2,13 +2,14 @@
 import Link from "next/link";
 import styles from "./header.module.css"
 import DarkModeToggle from "@/componets/header/darkModelToggle/DarkModeToggle";
-import UserModalNavigate from "@/componets/header/userModalNavigate/UserModalNavigate";
+import UserModalNavigate, {IData} from "@/componets/header/userModalNavigate/UserModalNavigate";
 import {useSession} from "next-auth/react";
 import {usePathname} from "next/navigation";
 import {Triangle} from "react-loader-spinner";
 import LinkNavigate from "@/componets/header/linkNavigate/LinkNavigate";
 import {useState} from "react";
 import MenuBurger from "@/componets/header/menuBurger/menuBurger";
+import useSWR from "swr";
 
 
 const links = [
@@ -50,6 +51,9 @@ const Header = () => {
     const [switherBurger, setSwitherBurger] = useState(false)
     const [switcherModal, setSwitcherModal] = useState(false)
     const currentRoute = usePathname();
+    const fetcher = (url: string, init?: RequestInit) => fetch(url, init).then(res => res.json())
+    const {data:dataUser, isLoading} = useSWR<IData>(`/api/users/${data?.user?.email}`, fetcher)
+
 
     return (
         <header className={styles.container}>
@@ -78,7 +82,8 @@ const Header = () => {
                 {status === "authenticated" &&
                     <UserModalNavigate setSwitcherModal={setSwitcherModal}
                                        switcherModal={switcherModal}
-                                       email={data?.user?.email!}/>
+                                       avatar={dataUser?.avatar!}
+                    />
                 }
             </section>
         </header>
